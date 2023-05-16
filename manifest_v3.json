@@ -1,0 +1,26 @@
+{
+    "name" : "dioxus-extension",
+    "version" : "1.0",
+    "description" : "dioxus-extension",
+    "permissions": [],
+    "content_security_policy": {
+        "extension_pages": "script-src 'wasm-unsafe-eval' 'self'; object-src 'self';"
+    },
+    "content_scripts": [
+        {
+            "matches": ["*://*/*"],
+            "js": [
+                "index.js"
+            ]
+        }
+    ],
+    "web_accessible_resources": [{
+        "resources": ["dioxus-extension_bg.wasm", "dioxus-extension.js", "index.js"],
+        "matches": ["*://example.com/*"]
+    }],
+    "action": {
+        "default_popup": "index.html",
+        "default_title": "User script"
+    },
+    "manifest_version": 3
+}

@@ -1,0 +1,5 @@
+[build]
+target = "index.html"
+dist = "pkg"
+filehash = false
+pattern_script = "<script type=\"module\" src=\"index.js\"></script>"
